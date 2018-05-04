@@ -14,6 +14,7 @@ class Task(models.Model):
     # again, these things cannot be deleted
     round = models.ForeignKey(Round, on_delete=models.CASCADE, related_name='tasks')
     is_deleted = models.BooleanField(default=False)
+    answer = models.TextField()
 
 
 class Solution(models.Model):  # a rare example of a deletable object

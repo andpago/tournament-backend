@@ -13,4 +13,8 @@ class Tournament(models.Model):
 class Round(models.Model):
     title = models.TextField(max_length=255)
     is_deleted = models.BooleanField(default=False)
-    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)
+    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE, related_name='rounds')
+    participants = models.ManyToManyField(User, related_name='rounds')
+    is_final = models.BooleanField(default=False)
+    is_selection = models.BooleanField(default=False)
+

@@ -11,11 +11,11 @@ class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Task
-        fields = ('title', 'author', 'text', 'round', 'tournament', 'answer')
+        fields = ('id', 'title', 'author', 'text', 'round', 'tournament', 'answer')
 
 
 class SolutionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Solution
-        fields = ('author', 'text', 'correct', 'task')
+        fields = ('id', 'author', 'text', 'correct', 'task')

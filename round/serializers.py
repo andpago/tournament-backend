@@ -6,7 +6,7 @@ from round.models import Tournament, Round
 class TournamentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tournament
-        fields = ('title', 'author')
+        fields = ('id', 'title', 'author', 'rounds')
 
 
 class RoundSerializer(serializers.ModelSerializer):
@@ -17,4 +17,4 @@ class RoundSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Round
-        fields = ('title', 'tournament', 'author')
+        fields = ('id', 'title', 'tournament', 'author', 'is_final', 'is_selection')

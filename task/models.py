@@ -22,3 +22,6 @@ class Solution(models.Model):  # a rare example of a deletable object
     text = models.TextField()
     correct = models.NullBooleanField(null=True)  # null until checked
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
+
+    def check_solution(self):
+        return self.text == self.task.answer

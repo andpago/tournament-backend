@@ -20,13 +20,14 @@ from rest_framework import routers
 
 from app.views import UserViewSet
 from round.views import TournamentViewSet, RoundViewSet
-from task.views import TaskViewSet
+from task.views import TaskViewSet, SolutionViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet, 'users')
 router.register(r'tournaments', TournamentViewSet, 'tournaments')
 router.register(r'rounds', RoundViewSet, 'rounds')
 router.register(r'tasks', TaskViewSet, 'tasks')
+router.register(r'solutions', SolutionViewSet, 'solutions')
 
 urlpatterns = [
     path('api/', include(router.urls)),

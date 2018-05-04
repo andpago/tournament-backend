@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from task.models import Task
+from task.models import Task, Solution
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -12,3 +12,10 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ('title', 'author', 'text', 'round', 'tournament', 'answer')
+
+
+class SolutionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Solution
+        fields = ('author', 'text', 'correct', 'task')

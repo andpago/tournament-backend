@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     'task',
     'round',
+    'news',
     'rest_framework',
 ]
 

@@ -19,6 +19,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from app.views import UserViewSet
+from news.views import PostListViewSet
 from round.views import TournamentViewSet, RoundViewSet
 from task.views import TaskViewSet, SolutionViewSet
 
@@ -28,6 +29,7 @@ router.register(r'tournaments', TournamentViewSet, 'tournaments')
 router.register(r'rounds', RoundViewSet, 'rounds')
 router.register(r'tasks', TaskViewSet, 'tasks')
 router.register(r'solutions', SolutionViewSet, 'solutions')
+router.register(r'news', PostListViewSet, 'news')
 
 urlpatterns = [
     path('api/', include(router.urls)),

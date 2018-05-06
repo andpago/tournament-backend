@@ -25,7 +25,7 @@ SECRET_KEY = '+2)_hcq*4k&)#v9hj*@p1ddpmxuzsuu7zgqn7)8&ljh@0933^c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'tournament']
 
 
 # Application definition
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 
 AUTH_USER_MODEL = 'app.User'

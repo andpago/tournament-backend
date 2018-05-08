@@ -8,6 +8,7 @@ class Tournament(models.Model):
     title = models.TextField(max_length=255)
     is_deleted = models.BooleanField(default=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    description = models.TextField()
 
 
 class Round(models.Model):

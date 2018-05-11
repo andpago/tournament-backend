@@ -6,3 +6,6 @@ from django.db import models
 
 class User(AbstractUser):
     is_deleted = models.BooleanField(default=False)
+    bio = models.TextField()
+    avatar = models.ImageField()
+

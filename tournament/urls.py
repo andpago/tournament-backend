@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from app.views import UserViewSet
+from app.views import UserViewSet, get_user_info
 from news.views import PostListViewSet
 from round.views import TournamentViewSet, RoundViewSet
 from task.views import TaskViewSet, SolutionViewSet
@@ -34,6 +34,7 @@ router.register(r'news', PostListViewSet, 'news')
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    url(r'^rest-auth/get_user_info', get_user_info),
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     path('admin/', admin.site.urls),

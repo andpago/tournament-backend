@@ -1,5 +1,6 @@
 from django import http
 from django.db.models import QuerySet
+from django.db.models.manager import BaseManager
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.request import Request
@@ -32,11 +33,11 @@ class TaskViewSet(viewsets.ModelViewSet):
 class SolutionViewSet(viewsets.ModelViewSet):
     serializer_class = SolutionSerializer
 
-    def get_queryset(self, request):
-        if request.user.is_anonymous:
-            return QuerySet()
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_anonymous:
+            return []
 
-        return Solution.objects.filter(author=request.user)
+        return Solution.objects.filter(author=self.request.user)
 
     @action(detail=False, methods=["PUT"])
     def submit(self, request: Request):
